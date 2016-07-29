@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :requester %><br>
-    <%= f.text_field :requester %>
+    <%= f.select :requester, @donor_names.map { |d| [d["name"], d["id"]["$oid"]] }  %>
   </div>
   <div class="field">
     <%= f.label :reason %><br>

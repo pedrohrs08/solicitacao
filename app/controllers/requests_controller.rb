@@ -15,6 +15,8 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
+    @donor_names = DonorsServiceClient.get_names["names"]
+    p @donor_names
   end
 
   # GET /requests/1/edit

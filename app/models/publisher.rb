@@ -10,7 +10,7 @@ class Publisher
 	end
 
 	def self.connection
-		@connection ||= Bunny.new("amqp://user1:user1@52.36.70.190:5672").tap do |c| 
+		@connection ||= Bunny.new("amqp://test:test@52.36.70.190:5672/requests").tap do |c| 
 			c.start 
 		end
 	end
