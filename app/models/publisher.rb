@@ -1,7 +1,7 @@
 class Publisher
 
 	def self.publish(message = {})
-		x = channel.fanout("requests")
+		x = channel.fanout("requests", :durable => true)
 		x.publish(message.to_json)
 	end
 

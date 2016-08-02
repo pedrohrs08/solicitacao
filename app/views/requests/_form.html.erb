@@ -13,13 +13,14 @@
 
   <div class="field">
     <%= f.label :requester %><br>
-    <%= f.select :requester, @donor_names.map { |d| [d["name"], d["id"]["$oid"]] }  %>
+    <%= f.select :requester, @donor_names.map { |d| [d["name"], d["id"]["$oid"]] }, id: "requester"  %>
   </div>
   <div class="field">
     <%= f.label :reason %><br>
-    <%= f.text_field :reason %>
+    <%= f.text_field :reason, id: "reason" %>
   </div>
   <div class="actions">
     <%= f.submit %>
+    <input type="button" onclick="javascript:sendNotification()">Send Notification</input>
   </div>
 <% end %>
