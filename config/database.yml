@@ -12,6 +12,7 @@
 default: &default
   adapter: mysql2
   encoding: utf8
+  username: root
   pool: 5
   password: <%= ENV['AGENDAMENTO_DATABASE_PASSWORD'] || 'abcd' %>
   host: <%= ENV['DB_HOST'] || 'localhost' %>
