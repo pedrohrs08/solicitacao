@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: solicitacao_production
-  username: solicitacao
+  username: root
   password: <%= ENV['AGENDAMENTO_DATABASE_PASSWORD'] || 'abcd' %>
   host: <%= ENV['DB_HOST'] || 'localhost' %>
