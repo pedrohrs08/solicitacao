@@ -13,9 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: abcd
-  socket: /tmp/mysql.sock
+  password: <%= ENV['AGENDAMENTO_DATABASE_PASSWORD'] || 'abcd' %>
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
 
 development:
   <<: *default
@@ -51,4 +50,5 @@ production:
   <<: *default
   database: solicitacao_production
   username: solicitacao
-  password: <%= ENV['SOLICITACAO_DATABASE_PASSWORD'] %>
+  password: <%= ENV['AGENDAMENTO_DATABASE_PASSWORD'] || 'abcd' %>
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
